@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spectrum.View.SpectrumDashboard.Dashboard"
+            NavigationPage.HasNavigationBar="False">
+
+
+    <ContentPage Title="help" Icon="help">
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="This Is help Page" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                       TextColor="Blue" FontSize="30" FontAttributes="Bold"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="DashBoard" Icon="dashboard">
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="This Is Dashboard" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                       TextColor="Blue" FontSize="30" FontAttributes="Bold"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Reports" Icon="reports">
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="This Is Reporting Page" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                       TextColor="Blue" FontSize="30" FontAttributes="Bold"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+
+    <ContentPage Title="setting" Icon="setting">
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="This Is setting Page" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                       TextColor="Blue" FontSize="30" FontAttributes="Bold"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+
+</TabbedPage>
+   

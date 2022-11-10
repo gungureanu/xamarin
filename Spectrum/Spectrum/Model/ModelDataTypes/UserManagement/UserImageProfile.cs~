@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+namespace Spectrum.Model.ModelDataTypes
+{
+    public class UserImageProfile : BaseEntityOptional
+    {
+        public Int64 ProfileImageID { get; set; }
+        public Guid UserID { get; set; }
+        public string ImageName { get; set; }
+        public bool IsDefault { get; set; }
+        public bool Active { get; set; }
+        public string ImagePath { get; set; }
+
+
+
+    }
+}

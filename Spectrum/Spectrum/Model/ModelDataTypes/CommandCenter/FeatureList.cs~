@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using BusinessLogic.IBusinessLogic;
+
+namespace Spectrum.Model.ModelDataTypes
+{
+    public class FeatureList : BaseEntityOptional
+    {
+        public int FeatureCategoryID { get; set; }
+        public int FeatureID { get; set; }
+        public string FeatureName { get; set; }
+        public string Description { get; set; }
+        public bool IsAccessabletoEndUser { get; set; }
+        public int PlanID { get; set; }
+        public bool Active { get; set; }
+        public string ReturnMessage { get; set; }
+        public List<SubscriptionPlan> SubscriptionPlanList { get; set; }
+        public int LanguageID { get; set; }
+        public Guid AccountID { get; set; }
+        public int ModuleID { get; set; }
+        public string PlanIDs { get; set; }
+        public string IsAllows { get; set; }
+    }
+}

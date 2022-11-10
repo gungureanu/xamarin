@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Spectrum"
+             x:Class="Spectrum.MainPage" NavigationPage.HasNavigationBar="False" >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,28,0,0"  >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" TextColor="#6191DD">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer    />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            <Grid x:Name="grdMain" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="45*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1" Margin="20" x:Name="imgLogo" HeightRequest="600" WidthRequest="600" Source="Spectrum_kha_circle_logo" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                <StackLayout Grid.Row="2"  x:Name="stkBelow" Orientation="Vertical" VerticalOptions="Start" Margin="0">
+                    <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="4" Margin="30,0,30,0"
+                         BackgroundColor="Gray">
+                        <ProgressBar ProgressColor="#f3a600" HeightRequest="4" VerticalOptions="FillAndExpand" x:Name="CtrlProgressBar"></ProgressBar>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

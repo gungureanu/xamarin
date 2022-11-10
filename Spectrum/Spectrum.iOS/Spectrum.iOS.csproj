@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{57BD0C32-ED0E-4084-855A-A27DA88FDA12}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>KhameliaApp.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>KhameliaApp.iOS</AssemblyName>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>Apple Development: Gabriel Ungureanu (X6H4XK56HA)</CodesignKey>
+    <CodesignProvision>Khamelia Development Profile</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignKey>Apple Development: Gabriel Ungureanu (X6H4XK56HA)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>Apple Distribution: Gabriel Ungureanu (Q5GXZ2LTXX)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <CodesignProvision>Khamelia Distribution Profile</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <BuildIpa>True</BuildIpa>
+    <CodesignKey>Apple Development: Sandeep Agarwal (UQU5TTNDY6)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnselectedTabColorEffectIOS.cs" />
+    <Compile Include="TabbedPageRenderer.cs" />
+    <Compile Include="DependencyServices\IPAddressManager.cs" />
+    <Compile Include="CustomEditorRenderer.cs" />
+    <Compile Include="CustomEntryRenderer.cs" />
+    <Compile Include="CustomPickerRenderer.cs" />
+    <Compile Include="DependencyServices\VersionAndBuild_iOS.cs" />
+    <Compile Include="CustomControls\CustomEditor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <InterfaceDefinition Include="SpectrumLaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\KhameliaLaunchScreenImages.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\48-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\55-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\88-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\100-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\172-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\196-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\216-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\16-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\32-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\32.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\64-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\128-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\256-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\256.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\512-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\512.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\KhameliaLaunchScreenImages.imageset\KHA-Icon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\KhameliaLaunchScreenImages.imageset\KHA-Icon%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\KhameliaLaunchScreenImages.imageset\KHA-Icon%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\kha_circle_logo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\kha_circle_logo-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\kha_circle_logo-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\kha_circle_logo-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\kha_circle_logo-4.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\kha_circle_logo-5.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\kha_circle_logo-6.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\kha_circle_logo-7.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImageIcons.imageset\kha_circle_logo-8.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.1.0.514</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ProgressRing">
+      <Version>0.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>1.2.0.223</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client">
+      <Version>1.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Spectrum\Spectrum.csproj">
+      <Project>{33D15AA5-B666-414A-BE5B-7902CBA21AD1}</Project>
+      <Name>Spectrum</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check_img.png" />
+    <BundleResource Include="Resources\lock_img.png" />
+    <BundleResource Include="Resources\apps_active.png" />
+    <BundleResource Include="Resources\dashboard_active.png" />
+    <BundleResource Include="Resources\help_active.png" />
+    <BundleResource Include="Resources\reports_active.png" />
+    <BundleResource Include="Resources\settings_active.png" />
+    <BundleResource Include="Resources\admin.png" />
+    <BundleResource Include="Resources\apps.png" />
+    <BundleResource Include="Resources\dashboard.png" />
+    <BundleResource Include="Resources\documents.png" />
+    <BundleResource Include="Resources\help.png" />
+    <BundleResource Include="Resources\invoices.png" />
+    <BundleResource Include="Resources\menu_bg.png" />
+    <BundleResource Include="Resources\menu_icon.png" />
+    <BundleResource Include="Resources\projects.png" />
+    <BundleResource Include="Resources\reports.png" />
+    <BundleResource Include="Resources\search.png" />
+    <BundleResource Include="Resources\tasks.png" />
+    <BundleResource Include="Resources\timer.png" />
+    <BundleResource Include="Resources\timesheets.png" />
+    <BundleResource Include="Resources\user.png" />
+    <BundleResource Include="Resources\back_icon.png" />
+    <BundleResource Include="Resources\dash.png" />
+    <BundleResource Include="Resources\new.png" />
+    <BundleResource Include="Resources\dash-new.png" />
+    <BundleResource Include="Resources\setting.png" />
+    <BundleResource Include="Resources\back_button.png" />
+    <BundleResource Include="Resources\blue_dot.png" />
+    <BundleResource Include="Resources\bug.png" />
+    <BundleResource Include="Resources\calendar_blue.png" />
+    <BundleResource Include="Resources\calendar_grey.png" />
+    <BundleResource Include="Resources\customer_icon.png" />
+    <BundleResource Include="Resources\date_blue.png" />
+    <BundleResource Include="Resources\date_grey.png" />
+    <BundleResource Include="Resources\envelope_blue.png" />
+    <BundleResource Include="Resources\envelope_grey.png" />
+    <BundleResource Include="Resources\home_blue.png" />
+    <BundleResource Include="Resources\home_grey.png" />
+    <BundleResource Include="Resources\nav_icon.png" />
+    <BundleResource Include="Resources\project_blue.png" />
+    <BundleResource Include="Resources\project_grey.png" />
+    <BundleResource Include="Resources\puzzle.png" />
+    <BundleResource Include="Resources\search_blue.png" />
+    <BundleResource Include="Resources\search_grey.png" />
+    <BundleResource Include="Resources\tasklist_icon.png" />
+    <BundleResource Include="Resources\excel_icon.png" />
+    <BundleResource Include="Resources\options_icon.png" />
+    <BundleResource Include="Resources\ppt_icon.png" />
+    <BundleResource Include="Resources\word_icon.png" />
+    <BundleResource Include="Resources\attachment_icon.png" />
+    <BundleResource Include="Resources\chk_mark.png" />
+    <BundleResource Include="Resources\chk_square.png" />
+    <BundleResource Include="Resources\doc_icon.png" />
+    <BundleResource Include="Resources\kha_circle_logo.png" />
+    <BundleResource Include="Resources\khamelia_logo.png" />
+    <BundleResource Include="Resources\puzzle_circle.png" />
+    <BundleResource Include="Resources\puzzle_icon.png" />
+    <BundleResource Include="Resources\puzzle_piece.png" />
+    <BundleResource Include="Resources\khamelia_logo_tl.png" />
+    <BundleResource Include="Resources\puzzle_piece_project.png" />
+    <BundleResource Include="Resources\attachment.png" />
+    <BundleResource Include="Resources\Toggle_AllTask.png" />
+    <BundleResource Include="Resources\Toggle_MyTask.png" />
+    <BundleResource Include="Resources\workspace_icon.png" />
+    <BundleResource Include="Resources\workspace_icon_blue.png" />
+    <BundleResource Include="Resources\workspace_icon_white.png" />
+    <BundleResource Include="Resources\drop_arrow_grey.png" />
+    <BundleResource Include="Resources\add_new_project.png" />
+    <BundleResource Include="Resources\video_cam_icon_blue.png" />
+    <BundleResource Include="Resources\video_cam_icon.png" />
+    <BundleResource Include="Resources\invoice_bill_icon_blue.png" />
+    <BundleResource Include="Resources\invoice_bill_icon.png" />
+    <BundleResource Include="Resources\user_reload.png" />
+    <BundleResource Include="Resources\phone_round_red.png" />
+    <BundleResource Include="Resources\audio_round_icon.png" />
+    <BundleResource Include="Resources\mic_round_icon.png" />
+    <BundleResource Include="Resources\video_round_icon.png" />
+    <BundleResource Include="Resources\video_icon_white.png" />
+    <BundleResource Include="Resources\time_tracker_icon_white.png" />
+    <BundleResource Include="Resources\chk_box_green.png" />
+    <BundleResource Include="Resources\chk_border_grey.png" />
+    <BundleResource Include="Resources\phone_round_grey.png" />
+    <BundleResource Include="Resources\phone_round_green.png" />
+    <BundleResource Include="Resources\red_circle.png" />
+    <BundleResource Include="Resources\blue_chk_round.png" />
+    <BundleResource Include="Resources\timesheet_icon_white.png" />
+    <BundleResource Include="Resources\timesheet_icon_red.png" />
+    <BundleResource Include="Resources\punch_card_icon_white.png" />
+    <BundleResource Include="Resources\punch_card_icon_blue.png" />
+    <BundleResource Include="Resources\settings_icon.png" />
+    <BundleResource Include="Resources\help_circle.png" />
+    <BundleResource Include="Resources\play_circle.png" />
+    <BundleResource Include="Resources\user_folder_blue.png" />
+    <BundleResource Include="Resources\user_folder.png" />
+    <BundleResource Include="Resources\hash_folder_blue.png" />
+    <BundleResource Include="Resources\hash_folder.png" />
+    <BundleResource Include="Resources\project_folder_icon_blue.png" />
+    <BundleResource Include="Resources\project_folder_icon.png" />
+    <BundleResource Include="Resources\team_folder_icon_blue.png" />
+    <BundleResource Include="Resources\team_folder_icon.png" />
+    <BundleResource Include="Resources\folder_icon_blue.png" />
+    <BundleResource Include="Resources\folder_icon.png" />
+    <BundleResource Include="Resources\logout_icon_blue.png" />
+    <BundleResource Include="Resources\logout_icon.png" />
+    <BundleResource Include="Resources\change_pass_icon_blue.png" />
+    <BundleResource Include="Resources\change_pass_icon.png" />
+    <BundleResource Include="Resources\invoice_icon_blue.png" />
+    <BundleResource Include="Resources\invoice_icon.png" />
+    <BundleResource Include="Resources\chat_icon_blue.png" />
+    <BundleResource Include="Resources\chat_icon.png" />
+    <BundleResource Include="Resources\video_icon_blue.png" />
+    <BundleResource Include="Resources\video_icon.png" />
+    <BundleResource Include="Resources\time_tracker_icon_blue.png" />
+    <BundleResource Include="Resources\time_tracker_icon.png" />
+    <BundleResource Include="Resources\timesheet_icon_blue.png" />
+    <BundleResource Include="Resources\timesheet_icon.png" />
+    <BundleResource Include="Resources\project_icon_blue.png" />
+    <BundleResource Include="Resources\project_icon.png" />
+    <BundleResource Include="Resources\punch_card_icon.png" />
+    <BundleResource Include="Resources\project_icon_round.png" />
+    <BundleResource Include="Resources\Toggle_AllTask_200_26.png" />
+    <BundleResource Include="Resources\Toggle_AllTask_250_33.png" />
+    <BundleResource Include="Resources\Toggle_AllTask_300_40.png" />
+    <BundleResource Include="Resources\Toggle_AllTask_400_52.png" />
+    <BundleResource Include="Resources\Toggle_AllTask_500_65.png" />
+    <BundleResource Include="Resources\Toggle_MyTask_40_52.png" />
+    <BundleResource Include="Resources\Toggle_MyTask_200_26.png" />
+    <BundleResource Include="Resources\Toggle_MyTask_250_33.png" />
+    <BundleResource Include="Resources\Toggle_MyTask_300_40.png" />
+    <BundleResource Include="Resources\Toggle_MyTask_500_65.png" />
+    <BundleResource Include="Resources\back_icon_inner.png" />
+    <BundleResource Include="Resources\user_Placeholder2.png" />
+    <BundleResource Include="Resources\KHA_Mobile_Girl_BG1.jpg" />
+    <BundleResource Include="Resources\KHA_Mobile_User1.jpg" />
+    <BundleResource Include="Resources\KHA_Mobile_User3.jpg" />
+    <BundleResource Include="Resources\KHA_Mobile_User4.jpg" />
+    <BundleResource Include="Resources\KHA_Mobile_User5.jpg" />
+    <BundleResource Include="Resources\KHA_Mobile_User2.jpg" />
+    <BundleResource Include="Resources\kha_app_check.png" />
+    <BundleResource Include="Resources\Toggle_UnReadMessages.png" />
+    <BundleResource Include="Resources\Toggle_AllMessages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check_update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checked_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\close_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dropdown_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\envelope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\failure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\female_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\female_user_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\KHA_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\lock_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\male_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\male_user_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\new_version.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\password_show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radio_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radio_btn_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\unchecked_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\ImageIcons.imageset\" />
+    <Folder Include="Assets.xcassets\SpectrumLaunchScreenImages.imageset\" />
+  </ItemGroup>
+</Project>

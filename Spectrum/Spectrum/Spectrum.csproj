@@ -1,0 +1,135 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Model\ModelDataTypes\BusinessRequirement\**" />
+
+    <EmbeddedResource Remove="Model\ModelDataTypes\BusinessRequirement\**" />
+
+    <None Remove="Model\ModelDataTypes\BusinessRequirement\**" />
+  
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Xamarin.Forms.Extended.InfiniteScrolling" Version="1.0.0-preview2" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.514" />
+    <PackageReference Include="Xam.Plugins.Forms.ProgressRing" Version="0.1.2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="View\New Folder\MyPage.xaml" />
+    <EmbeddedResource Remove="View\Dashboard\LicenseAgreement.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\AccountCreation\AboutBusiness.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\AccountCreation\AccountConfirmation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\AccountCreation\LicenseAgreement.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\AccountCreation\PersonalInformation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\AccountCreation\TeamMembers.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\AccountCreation\ThankYou.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\AccountCreation\UserInvitation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ChangePassword\ChangePassword.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ForgotPassword\ForgetPasswordEmail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ForgotPassword\PasswordResetSuccess.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ForgotPassword\ResetPassword.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Welcome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomControls\" />
+    <Folder Include="View\Updation\" />
+    <Folder Include="View\SpectrumDashboard\" />
+    <Folder Include="View\ProjectTasks\" />
+    <Folder Include="View\MasterDetailPages\" />
+    <Folder Include="View\MasterPages\Chatting\" />
+    <Folder Include="View\Popup\" />
+    <Folder Include="View\Popup\Alerts\" />
+    <Folder Include="Dependencies\" />
+    <Folder Include="Model\Chat\" />
+    <Folder Include="Converter\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Model\ModelDataTypes\Administrator\SubscriptionAccounts.cs" />
+    <Compile Remove="Model\ModelDataTypes\Subscription\SubscriptionInvoice.cs" />
+    <Compile Remove="Model\SubscriptionAccounts.cs" />
+    <Compile Remove="View\ForgotPassword\ForgotPasswordThankYou.cs" />
+    <Compile Remove="View\New Folder\MyPage.cs" />
+    <Compile Remove="View\SpectrumDashboard\Views\TabbedPageSelectedTabItemDynamicTintColorEffec.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="View\Dashboard\SpectrumDashboard.xaml.cs">
+      <DependentUpon>SpectrumDashboard.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\MasterPages\TimeSheetsDashbord\MyTiimeSheetsDashbord.xaml.cs">
+      <DependentUpon>MyTiimeSheetsDashbord.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="View\MasterPages\TimeSheetsDashbord\MyTimesSheetsDashbord.xaml.cs">
+      <DependentUpon>MyTimesSheetsDashbord.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Model\TimeSheets\" />
+    <None Remove="Rg.Plugins.Popup" />
+    <None Remove="Dependencies\" />
+    <None Remove="Model\Chat\" />
+    <None Remove="ChatUtility\" />
+    <None Remove="Microsoft.AspNetCore.SignalR.Client" />
+    <None Remove="Converter\" />
+  </ItemGroup>
+</Project>

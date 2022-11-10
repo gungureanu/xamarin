@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Spectrum.Model.ModelDataTypes.ProjectManagement
+{
+
+    public class MobileProjectDetailViewModel
+    {
+        public string ProjectName { get; set; }
+        public string TaskPrefixKey { get; set; }
+        public int NextTaskNumber { get; set; }
+        public string Description { get; set; }
+        public int ProjectType { get; set; }
+        public Guid CompanyID { get; set; }
+        public Guid AccountID { get; set; }
+        public Guid UserID { get; set; }
+        public int ProjectStautsID { get; set; }
+        public int ModuleID { get; set; }
+        public List<ProjectTypeDetailProfile> lstProjectType { get; set; }
+        public List<CompanyProfile> lstCompanies { get; set; }
+        public List<UserProfile> lstProjectManagers { get; set; }
+        public List<TeamProfile> lstTeams { get; set; }
+        public List<ProjectStatusProfile> lstProjectStatus { get; set; }
+        public MobileProjectDetailViewModel()
+        {
+            lstProjectType = new List<ProjectTypeDetailProfile>();
+            lstCompanies = new List<CompanyProfile>();
+            lstProjectManagers = new List<UserProfile>();
+            lstTeams = new List<TeamProfile>();
+            lstProjectStatus = new List<ProjectStatusProfile>();
+        }
+    }
+}

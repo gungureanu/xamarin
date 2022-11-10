@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
+             xmlns:local="clr-namespace:Spectrum.ViewModel"
+             x:Class="Spectrum.View.MasterPages.ProjectsTasksList">
+    <StackLayout BackgroundColor="White">
+        <StackLayout BackgroundColor="#3376AD" VerticalOptions="Start" HeightRequest="145" Padding="0,10,0,0" x:Name="stkMainHeader">
+            <Grid BackgroundColor="Transparent" HeightRequest="120" x:Name="GrdHeader">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="80*"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="5"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="puzzle_icon" Grid.Row="1" Grid.Column="1" HeightRequest="30" WidthRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="NavIconTapped_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Project Tasks" Grid.Row="1" Grid.Column="2" BackgroundColor="Transparent" TextColor="#FFFFFF" HorizontalTextAlignment="Center"
+                       FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontSize="Title"></Label>
+                <!--<Image Source="tasklist_icon" Grid.Row="1" Grid.Column="3" HeightRequest="30" WidthRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>-->
+                <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" HeightRequest="40">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="3.5*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="Toggle_MyTask" x:Name="imgTaskType" HeightRequest="30" Grid.Row="0" Grid.Column="0" Aspect="Fill" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Toggle_TaskType"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="2" x:Name="GrdNew">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="New_Task_Clicked"></TapGestureRecognizer>
+                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="2"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="5"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="1" Source="doc_icon" HeightRequest="30" WidthRequest="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+                            <Label Text="New" Grid.Row="0" Grid.Column="2" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"></Label>
+                        </Grid>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <StackLayout Margin="0,-5,0,20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding CanShowList}" x:Name="stkTaskList">
+            <Entry x:Name="lblCanShwList" Text="" TextChanged="lblCanShwList_TextChanged" IsVisible="False"></Entry>
+            <ListView ItemsSource="{Binding Items}" CachingStrategy="RecycleElement" HasUnevenRows="True" x:Name="lstTasksData"
+                      SeparatorVisibility="None"
+                      ItemSelected="OnTaskSelected" SeparatorColor="#FFF">
+                <ListView.Behaviors>
+                    <extended:InfiniteScrollBehavior IsLoadingMore="{Binding IsBusy}" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Background="#d1dff8">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Margin="10,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0"
+                                             BackgroundColor="Transparent" Orientation="Horizontal" HeightRequest="40" IsVisible="{Binding IsMainListVisible}">
+                                    <Label Text="{Binding MainListName}" TextColor="Gray" FontSize="Medium" HorizontalOptions="StartAndExpand" FontAttributes="Bold" VerticalOptions="CenterAndExpand" MinimumHeightRequest="30"></Label>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF" MinimumHeightRequest="130" Grid.Row="1" Margin="0,-8,0,0">
+                                    <Grid BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="2" Margin="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20"></ColumnDefinition>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                            <ColumnDefinition Width="70*"></ColumnDefinition>
+                                            <ColumnDefinition Width="5"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Row="0" Grid.Column="0" Source="blue_dot" Margin="2,15,0,0" HeightRequest="10" WidthRequest="10" VerticalOptions="Start" HorizontalOptions="Center" IsVisible="{Binding IsRead}"></Image>
+                                        <Image Grid.Row="0" Grid.Column="1" Source="bug" HeightRequest="30" WidthRequest="30" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,5,0,0"></Image>
+                                        <Grid Grid.Row="0" Grid.Column="2" Margin="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                                <Label x:Name="lblAssignedUserName" Text="{Binding ProjectAssignName}" TextColor="#4E9BEA" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" FontAttributes="Bold" HorizontalTextAlignment="Start" HeightRequest="40">
+                                                    <Label.FontSize>
+                                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="20"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding TaskTimeName}" TextColor="#A1A1A1" FontAttributes="Bold" VerticalOptions="StartAndExpand" HorizontalOptions="End" HorizontalTextAlignment="End" VerticalTextAlignment="Start">
+                                                    <Label.FontSize>
+                                                        <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Margin="0,-15,0,0" MinimumHeightRequest="40">
+                                                <Grid VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label x:Name="lblKey" Grid.Row="0" LineBreakMode="TailTruncation" Grid.Column="0" Text="{Binding FullTaskName}" TextColor="#000000" VerticalOptions="Start" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Start">
+                                                        <Label.FontSize>
+                                                            <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Image Grid.Row="0" Grid.Column="1" Source="attachment" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="End" IsVisible="{Binding HasAttachment}"></Image>
+                                                </Grid>
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" MinimumHeightRequest="40" Margin="0,-10,0,0">
+                                                <Grid VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label x:Name="lblDescription" Grid.Row="0" Grid.Column="0" LineBreakMode="WordWrap" Text="{Binding Summary}" TextColor="#A1A1A1" VerticalOptions="Start" HorizontalOptions="Start" HorizontalTextAlignment="Start"  VerticalTextAlignment="Start" HeightRequest="60">
+                                                        <Label.FontSize>
+                                                            <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Grid>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <Grid Padding="6" IsVisible="{Binding IsBusy}">
+                        <!-- set the footer to have a zero height when invisible -->
+                        <Grid.Triggers>
+                            <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                <Setter Property="HeightRequest" Value="0" />
+                            </Trigger>
+                        </Grid.Triggers>
+                        <!-- the loading content -->
+                        <Label Text="Loading..." TextColor="#4E9BEA" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+                    </Grid>
+                </ListView.Footer>
+
+            </ListView>
+        </StackLayout>
+        <StackLayout BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HeightRequest="78"  Margin="0,-12,0,5" x:Name="stkNoTasks" IsVisible="False">
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="puzzle_circle" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0" Aspect="AspectFit" Rotation="75"></Image>
+                <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent">
+                    <Label Text="No Project Tasks Found" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+                           FontSize="Large" FontAttributes="Bold" TextColor="LightGray"></Label>
+                    <Label TextColor="LightGray" Text="Please have your Specturm administrator grant you access to the project tasks or create new task" FontSize="Medium"
+                           VerticalOptions="Start" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"></Label>
+                    <Frame x:Name="frmCreateNewProject" Grid.Row="2" Margin="20,50,20,0" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" HasShadow="False" CornerRadius="7" Padding="2" BackgroundColor="#4C97E4">
+                        <Frame HasShadow="False" CornerRadius="5" BackgroundColor="#FFFFFF" Padding="12">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="New_Task_Clicked"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+                                <Label Text="Create New Task" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#4C97E4"></Label>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                    <Label TextColor="Gray" Text="Cancel" FontSize="Large"
+                           VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Cancel_TaskList_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <!--<StackLayout HeightRequest="2" HorizontalOptions="StartAndExpand" VerticalOptions="End">
+            <BoxView HeightRequest="2" x:Name="BoxFooterList" BackgroundColor="#A1A1A1"></BoxView>
+        </StackLayout>
+        <StackLayout HeightRequest="0" VerticalOptions="End" HorizontalOptions="CenterAndExpand" x:Name="StkSearchBar" Orientation="Horizontal" IsVisible="False">
+            <Entry x:Name="txtSearchTask" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="200"></Entry>
+            <Image Source="search_grey" HeightRequest="40" WidthRequest="40" VerticalOptions="CenterAndExpand" HorizontalOptions="End">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SearchTask_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>-->
+        <!--<StackLayout Background="#F5F5F5" VerticalOptions="EndAndExpand" HeightRequest="78">
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="ImgEnvelope" Source="envelope_blue" Grid.Row="0" Grid.Column="1" HeightRequest="40" WidthRequest="40" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Envelope_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="ImgSearch" Source="search_grey" Grid.Row="0" Grid.Column="2" HeightRequest="40" WidthRequest="40"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Search_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="ImgCalendar" Source="date_grey" Grid.Row="0" Grid.Column="3" HeightRequest="40" WidthRequest="40"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Calendar_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </StackLayout>-->
+    </StackLayout>
+</ContentPage>

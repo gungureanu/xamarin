@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spectrum.Welcome" NavigationPage.HasNavigationBar="False" BackgroundColor="#FFF">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,28,0,0"  >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" TextColor="#6191DD">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            <Grid x:Name="grdMain" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1" Margin="20" x:Name="imgLogo" HeightRequest="600" WidthRequest="600"  Source="Spectrum_kha_circle_logo" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                <StackLayout Grid.Row="2"  x:Name="stkBelow" Orientation="Vertical" VerticalOptions="Start" Margin="0">
+
+                    <Frame HasShadow="False" CornerRadius="7" Padding="2" BackgroundColor="#FFFFFF" Margin="20,10,20,0" >
+                        <Frame HasShadow="False" CornerRadius="5" BackgroundColor="#FFFFFF" Padding="12" BorderColor="#2796FB">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Login_Clicked"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+                                <Label Text="Sign In" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#4C97E4"></Label>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                    <Label x:Name="lblSignUp" Margin="0,10,0,0" Text="Create Account" IsVisible="false" HorizontalOptions="CenterAndExpand" TextColor="#A1a1a1">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SignUp_Clicked"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

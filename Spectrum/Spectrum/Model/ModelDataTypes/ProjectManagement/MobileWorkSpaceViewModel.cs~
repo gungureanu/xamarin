@@ -1,0 +1,15 @@
+﻿using System;
+namespace Spectrum.Model.ModelDataTypes.
+{
+    public class MobileWorkSpaceViewModel
+    {
+        public List<WorkspaceItem> lstWorkSpaces { get; set; }
+        public List<MobileTeamProfile> lstTeams { get; set; }
+
+        public MobileWorkSpaceViewModel()
+        {
+            lstWorkSpaces = new List<WorkspaceItem>();
+            lstTeams = new List<MobileTeamProfile>();
+        }
+    }
+}

@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Spectrum.Model.ModelDataTypes
+{
+    public class UserLoginHistoryProfile : BaseEntityOptional
+    {
+        public Int64 LoginHistoryID { get; set; }
+        public Guid UserID { get; set; }
+        public string Status { get; set; }
+        public Int32 LoginAttempts { get; set; }
+        public string IPAddress { get; set; }
+
+    }
+}

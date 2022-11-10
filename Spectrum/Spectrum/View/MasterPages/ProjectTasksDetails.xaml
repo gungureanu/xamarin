@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spectrum.View.MasterPages.ProjectTasksDetails">
+    <!--<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0"/>
+            <On Platform="Android" Value="0,0,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>-->
+    <StackLayout BackgroundColor="White">
+        <StackLayout BackgroundColor="#3376AD" VerticalOptions="Start" HeightRequest="100" x:Name="stkMainHeader" Padding="0,10,0,0">
+            <Grid BackgroundColor="Transparent" HeightRequest="100" x:Name="GrdHeader">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="80*"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="5"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="back_button" Grid.Row="1" Grid.Column="1" HeightRequest="40" WidthRequest="40" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BackIconTapped_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Task Details" Grid.Row="1" Grid.Column="2" BackgroundColor="Transparent" TextColor="#FFFFFF" HorizontalTextAlignment="Start" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontSize="Title"></Label>
+                <!--<Image Source="tasklist_icon" Grid.Row="1" Grid.Column="3" HeightRequest="30" WidthRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>-->
+            </Grid>
+        </StackLayout>
+        <StackLayout VerticalOptions="Start" MinimumHeightRequest="30" Margin="0,0,0,0">
+            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="0,-6,0,0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <BoxView x:Name="BoxView1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" BackgroundColor="#D1DFF8"></BoxView>
+                <Label x:Name="txtTaskSummary" Text="" Grid.Row="0" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Margin="10,0,0,0"></Label>
+            </Grid>
+        </StackLayout>
+        <StackLayout VerticalOptions="Start" HeightRequest="60" Margin="10,0,0,0">
+            <Grid HeightRequest="60">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="74*"></ColumnDefinition>
+                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                    <ColumnDefinition Width="5"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="customer_icon" Grid.Row="0" Grid.Column="1" HeightRequest="50" WidthRequest="50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                </Image>
+                <StackLayout Grid.Row="0" Grid.Column="2" HeightRequest="45" VerticalOptions="CenterAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"></RowDefinition>
+                            <RowDefinition Height="20"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="txtTaskOwner" Text="" TextColor="#4E9BEA" FontAttributes="Bold" Grid.Row="0">
+                            <Label.FontSize>
+                                <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="20"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label x:Name="txtTaskDate" Text="" TextColor="#A1A1A1" Grid.Row="1">
+                            <Label.FontSize>
+                                <OnPlatform x:TypeArguments="x:Double" iOS="17" Android="14"/>
+                            </Label.FontSize>
+                        </Label>
+                    </Grid>
+                </StackLayout>
+                <Image Source="options_icon" Grid.Row="0" Grid.Column="3" HeightRequest="20" WidthRequest="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+            </Grid>
+        </StackLayout>
+
+        <Grid VerticalOptions="Start" HorizontalOptions="StartAndExpand" Margin="15,0,0,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label x:Name="txtAssignedTo" Text="To: Sandeep Agarwal; Jai Singh; ..." Grid.Row="0" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"></Label>
+        </Grid>
+
+        <Grid VerticalOptions="Start" HorizontalOptions="StartAndExpand" Margin="15,-6,0,0" x:Name="grdAttachment" IsVisible="False" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="attachment_icon" HeightRequest="15" WidthRequest="15" Grid.Row="0" Grid.Column="0" HorizontalOptions="End"></Image>
+            <Label x:Name="txtAttachmentCount" HeightRequest="15" Text="attachments" Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+            <ScrollView Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="45" x:Name="ScrDocuments">
+                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" x:Name="StkDocuments">
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+        <ScrollView x:Name="scrTaskDescription" Orientation="Vertical" HorizontalOptions="StartAndExpand" Margin="10,0,0,0">
+            <Label x:Name="lblDescription" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"
+                           LineBreakMode="WordWrap"
+                           Text="&#x0a; Hello Team&#x0a;   This is test description This is test description This is test description This is test description This is test description This is test description  This is test description This is test description &#x0a; 1&#x0a; 1√1√&#x0a; "
+                           >
+                <Label.FontSize>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="17" Android="14"/>
+                </Label.FontSize>
+            </Label>
+        </ScrollView>
+        <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand">
+            <BoxView x:Name="boxTaskDetailBottom" HeightRequest="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="#A1A1A1"></BoxView>
+        </StackLayout>
+        <StackLayout Background="#F5F5F5" VerticalOptions="EndAndExpand" HeightRequest="78">
+            <Grid VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--<Image x:Name="ImgEnvelope" Source="envelope_blue" Grid.Row="0" Grid.Column="1" HeightRequest="40" WidthRequest="40" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Envelope_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="ImgSearch" Source="search_grey" Grid.Row="0" Grid.Column="2" HeightRequest="40" WidthRequest="40"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Search_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="ImgCalendar" Source="date_grey" Grid.Row="0" Grid.Column="3" HeightRequest="40" WidthRequest="40"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Calendar_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>-->
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

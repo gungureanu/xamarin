@@ -1,0 +1,84 @@
+﻿<Properties StartupConfiguration="{57BD0C32-ED0E-4084-855A-A27DA88FDA12}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True" HasHotReloadOverlayBeenDismissed="True">
+  <MonoDevelop.Ide.ItemProperties.KhameliaApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget." />
+  <MonoDevelop.Ide.Workbench ActiveDocument="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/OnlineChatDashboard.xaml">
+    <Files>
+      <File FileName="KhameliaApp/KhameliaApp/ChatUtility/ConferenceUser.cs" Line="13" Column="41" IsPinned="True" />
+      <File FileName="KhameliaApp/KhameliaApp/ChatUtility/ChatViewModel.cs" />
+      <File FileName="KhameliaApp/KhameliaApp/View/MasterPages/HomeMasterDetailPage.xaml.cs" />
+      <File FileName="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/OnlineChatDashboard.xaml" Line="19" Column="42" />
+      <File FileName="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/OnlineChatDashboard.xaml.cs" />
+      <File FileName="KhameliaApp/KhameliaApp/ChatUtility/ParticipantsModel.cs" />
+      <File FileName="KhameliaApp/KhameliaApp/Model/ModelDataTypes/Administration/UserProfileMob.cs" />
+      <File FileName="KhameliaApp/KhameliaApp/ChatUtility/ChatUtilityService.cs" />
+      <File FileName="KhameliaApp/KhameliaApp/ChatUtility/ConferenceMessage.cs" />
+      <File FileName="KhameliaApp/KhameliaApp/ChatUtility/MessageModel.cs" />
+      <File FileName="KhameliaApp/KhameliaApp/Converter/InverseBoolConverter.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="KhameliaApp" expanded="True">
+            <Node name="KhameliaApp" expanded="True">
+              <Node name="ChatUtility" expanded="True" />
+              <Node name="Converter" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="MasterPages" expanded="True">
+                  <Node name="Chatting" expanded="True">
+                    <Node name="OnlineChatDashboard.xaml" expanded="True" selected="True" />
+                  </Node>
+                  <Node name="HomeMasterDetailPage.xaml" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Login.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+            <Node name="KhameliaApp.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.KhameliaApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/ViewModel/TaskListViewModel.cs" relfile="KhameliaApp/KhameliaApp/ViewModel/TaskListViewModel.cs" line="69" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/ViewModel/TaskListViewModel.cs" relfile="KhameliaApp/KhameliaApp/ViewModel/TaskListViewModel.cs" line="74" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/CheckLogin.xaml.cs" relfile="KhameliaApp/KhameliaApp/CheckLogin.xaml.cs" line="27" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/CheckLogin.xaml.cs" relfile="KhameliaApp/KhameliaApp/CheckLogin.xaml.cs" line="18" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/CheckLogin.xaml.cs" relfile="KhameliaApp/KhameliaApp/CheckLogin.xaml.cs" line="38" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/Service/ProjectTaskService.cs" relfile="KhameliaApp/KhameliaApp/Service/ProjectTaskService.cs" line="60" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/ForgotPassword/ForgetPasswordEmail.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/ForgotPassword/ForgetPasswordEmail.xaml.cs" line="45" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/ForgotPassword/ForgetPasswordEmail.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/ForgotPassword/ForgetPasswordEmail.xaml.cs" line="69" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/NewTask.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/NewTask.xaml.cs" line="333" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/Service/ProjectTaskService.cs" relfile="KhameliaApp/KhameliaApp/Service/ProjectTaskService.cs" line="427" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/WorkSpaceSelection.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/WorkSpaceSelection.xaml.cs" line="415" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/NewProject.xaml" relfile="KhameliaApp/KhameliaApp/View/MasterPages/NewProject.xaml" line="2" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" line="380" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Timesheets/TimesheetEntry.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Timesheets/TimesheetEntry.xaml.cs" line="280" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Timesheets/TimesheetEntry.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Timesheets/TimesheetEntry.xaml.cs" line="424" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/Service/PunchCardService.cs" relfile="KhameliaApp/KhameliaApp/Service/PunchCardService.cs" line="129" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/Service/PunchCardService.cs" relfile="KhameliaApp/KhameliaApp/Service/PunchCardService.cs" line="115" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" line="281" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" line="303" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" line="184" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/Popup/Alerts/PopupMessage.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/Popup/Alerts/PopupMessage.xaml.cs" line="81" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/Popup/Alerts/PopupMessage.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/Popup/Alerts/PopupMessage.xaml.cs" line="85" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/Popup/Alerts/PopupMessage.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/Popup/Alerts/PopupMessage.xaml.cs" line="80" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/PunchCard/PunchCardEntry.xaml.cs" line="163" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" line="613" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/WorkSpaceSelection.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/WorkSpaceSelection.xaml.cs" line="289" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" line="410" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" line="419" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" line="426" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" line="371" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" line="438" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" line="311" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/Chatting/ChatDashbord.xaml.cs" line="310" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/View/MasterPages/HomeMasterDetailPage.xaml.cs" relfile="KhameliaApp/KhameliaApp/View/MasterPages/HomeMasterDetailPage.xaml.cs" line="245" column="1" />
+      <Breakpoint file="/Users/logixshapers/Desktop/Kha App/KhameliaApp/KhameliaApp/KhameliaApp/MainPage.xaml.cs" relfile="KhameliaApp/KhameliaApp/MainPage.xaml.cs" line="125" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

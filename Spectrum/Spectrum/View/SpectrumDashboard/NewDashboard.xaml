@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Spectrum.View.SpectrumDashboard.NewDashboard">
+    <ContentPage.Content>
+        <StackLayout>
+          <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                 <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
+       </Grid.RowDefinitions>
+                <StackLayout> 
+
+            <Grid BackgroundColor="#D1DFF8" Grid.Row="0" Margin="0,36,0,0">
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="1*"/>  
+                      <RowDefinition Height="1*"/> 
+                    </Grid.RowDefinitions>
+                      <StackLayout> 
+                  <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                             <ColumnDefinition Width=".7*"/>
+                             <ColumnDefinition Width="8*"/>
+                             <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                <Image Source="menu_icon" Margin="0,20,0,0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+                                    <Image Source="Spectrum_kha_circle_logo" Margin="0,20,0,0" Grid.Column="1" HeightRequest="196" WidthRequest="196"   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" />
+                <Image Source="user" Margin="0,20,0,0" Grid.Column="2" HeightRequest="20" WidthRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            </Grid>
+                </StackLayout> 
+                                                  
+              <Grid Grid.Row="1">
+               <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="2*"/>
+                    
+                </Grid.ColumnDefinitions>   
+               <StackLayout Grid.Column="0"> 
+               <Frame Padding="0" Margin="10,0,0,0" BorderColor="DarkGray" HasShadow="True" HorizontalOptions="FillAndExpand" CornerRadius="0"  VerticalOptions="CenterAndExpand">
+                       <!-- <SearchBar Placeholder="Search"   PlaceholderColor="#C6D7F7"  BackgroundColor="#FFFFFF" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" />-->
+                        <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".9*"/>
+                                    <ColumnDefinition Width="9.1*"/>
+                                </Grid.ColumnDefinitions>
+                           <Image Source="search" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+                            <Entry Grid.Column="1" Placeholder="Search" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PlaceholderColor="#C6D7F7" /> 
+                             </Grid>
+                        </Frame>
+                </StackLayout>
+            </Grid>
+          </Grid>
+        </Grid>
+        </StackLayout>    
+                
+            <StackLayout Grid.Row="1"  x:Name="StkDashboardPage" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Label Text="Dashboard Page"  TextColor="Blue"/>
+                    </StackLayout>
+            </StackLayout>
+           
+          <StackLayout Margin="0,2,0,0" Grid.Row="1" x:Name="StkAppsPage">
+          <Grid>
+            <Grid.RowDefinitions> 
+                 <RowDefinition Height="2.3*"/>
+                 <RowDefinition Height="2.3*"/>
+                 <RowDefinition Height="2.3*"/>                                 
+                    
+                 </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0"  > 
+            <Grid>     
+              <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>   
+                <Image Source="menu_bg" Aspect="Fill" HeightRequest="112" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                <Image Source="projects" Grid.Column="1"  VerticalOptions="CenterAndExpand" Margin="0,0,0,22" HorizontalOptions="CenterAndExpand" />
+                <Label Text="Projects" Grid.Column="1" TextColor="#228DFD" FontSize="Medium" Margin="0,0,0,14" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" />
+                <Image Source="menu_bg" Aspect="Fill" Grid.Column="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                <Image Source="tasks"  Grid.Column="2" VerticalOptions="CenterAndExpand" Margin="0,0,0,22" HorizontalOptions="CenterAndExpand" />
+                <Label Text="Tasks" Grid.Column="2" TextColor="#228DFD" FontSize="Medium" Margin="0,0,0,14" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" />
+                <Image Source="menu_bg" Aspect="Fill" Grid.Column="3" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                <Image Source="timer"  Grid.Column="3" VerticalOptions="CenterAndExpand" Margin="0,0,0,22" HorizontalOptions="CenterAndExpand" />
+              <Label Text="Timer" Grid.Column="3" TextColor="#228DFD" FontSize="Medium" Margin="0,0,0,14" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" />
+            </Grid>
+            </StackLayout> 
+                        
+         <StackLayout Grid.Row="1"> 
+            <Grid>     
+              <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>   
+                <Image Source="menu_bg" HeightRequest="112"  Aspect="Fill" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+               <Image Source="timesheets"  Grid.Column="1" VerticalOptions="CenterAndExpand" Margin="0,0,0,22" HorizontalOptions="CenterAndExpand" />
+               <Label Text="Timesheets" Grid.Column="1" TextColor="#228DFD" FontSize="Medium" Margin="0,0,0,14" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" />
+               <Image Source="menu_bg" Aspect="Fill" Grid.Column="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+               <Image Source="documents"  Grid.Column="2" VerticalOptions="CenterAndExpand" Margin="0,0,0,22" HorizontalOptions="CenterAndExpand" />
+               <Label Text="Documents" Grid.Column="2" TextColor="#228DFD" FontSize="Medium" Margin="0,0,0,14" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" />
+               <Image Source="menu_bg" Aspect="Fill" Grid.Column="3" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />     
+               <Image Source="invoices"  Grid.Column="3" VerticalOptions="CenterAndExpand" Margin="0,0,0,22" HorizontalOptions="CenterAndExpand" />
+               <Label Text="Invoices" Grid.Column="3" TextColor="#228DFD" FontSize="Medium" Margin="0,0,0,14" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" />
+             
+      </Grid>
+     </StackLayout>  
+           <StackLayout Grid.Row="2">      
+            <Grid>     
+              <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>   
+                <Image Source="menu_bg" HeightRequest="112" Aspect="Fill" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                <Image Source="admin"  Grid.Column="1" VerticalOptions="CenterAndExpand" Margin="0,0,0,22" HorizontalOptions="CenterAndExpand" />
+               <Label Text="Admin" Grid.Column="1" TextColor="#228DFD" FontSize="Medium" Margin="0,0,0,12" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" />
+              </Grid>
+             </StackLayout>
+            </Grid>
+           </StackLayout>
+   
+             <StackLayout Grid.Row="1" x:Name="StkReportsPage"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                <StackLayout>
+                    <Label Text="Reports Page"  TextColor="Purple"/>
+                    </StackLayout>
+            </StackLayout>
+
+             <StackLayout Grid.Row="1" x:Name="StkHelpPage"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  >
+                <StackLayout>
+                    <Label Text="Help Page"  TextColor="Red"/>
+                    </StackLayout>
+            </StackLayout>
+            
+             <StackLayout Grid.Row="1"  x:Name="StkSettingsPage" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                <StackLayout>
+                    <Label Text="Settings Page"  TextColor="Green"/>
+                    </StackLayout>
+            </StackLayout>
+            
+            <StackLayout Grid.Row="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+             <Frame HasShadow="False"  CornerRadius="0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" BackgroundColor="#CBDAF7">  
+               <Grid Grid.Row="1" > 
+            <Grid.ColumnDefinitions> 
+                 <ColumnDefinition Width="2*"/>
+                 <ColumnDefinition Width="2*"/>
+                 <ColumnDefinition Width="2*"/>
+                 <ColumnDefinition Width="2*"/>
+                 <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+             <Grid.RowDefinitions>
+                <RowDefinition Height=".60*"/>
+                <RowDefinition Height=".30*"/>
+       </Grid.RowDefinitions>
+               <Image Source="dashboard_active"  x:Name="ImgDashboardAccess" Grid.Row="0" Grid.Column="0" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+               <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Dashboard_Clicked" />
+                            </Image.GestureRecognizers>
+                            </Image>
+            <Label Text="Dashboard" Grid.Row="1" Grid.Column="0" FontSize="12" TextColor="#F09CO2" x:Name="LblDashboardPage" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Dashboard_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                  <Label Text="Dashboard" Grid.Row="1" Grid.Column="0" FontSize="12" x:Name="LblDashboardPage1" TextColor="#228BFA" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+               <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Dashboard_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+            <Image Source="apps" x:Name="ImgAppsAccess" Grid.Row="0" Grid.Column="1" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+             <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Apps_Clicked" />
+                            </Image.GestureRecognizers> 
+                            </Image>
+            <Label Text="Apps" Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="#F09CO2" x:Name="LblAppsPage" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                          <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Apps_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+            
+             <Label Text="Apps" Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="#228BFA" x:Name="LblAppsPage1" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Apps_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+               <Image Source="reports" x:Name="ImgReportsAccess" Grid.Row="0" Grid.Column="2" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+                <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Reports_Clicked" />
+                            </Image.GestureRecognizers> 
+                            </Image>
+            <Label Text="Reports" Grid.Row="1" Grid.Column="2" FontSize="12" x:Name="LblReportsPage" TextColor="#F09CO2" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+             <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Reports_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                     <Label Text="Reports" Grid.Row="1" Grid.Column="2" FontSize="12" x:Name="LblReportsPage1" TextColor="#228BFA" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Reports_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    
+            <Image Source="help" x:Name="ImgHelpAccess" Grid.Row="0" Grid.Column="3" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+          <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Help_Clicked" />
+                            </Image.GestureRecognizers>
+                            </Image>  
+            <Label Text="Help" Grid.Row="1" Grid.Column="3" FontSize="12" x:Name="LblHelpPage" TextColor="#F09CO2" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                         <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Help_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+            <Label Text="Help" Grid.Row="1" Grid.Column="3" FontSize="12" x:Name="LblHelpPage1" TextColor="#228BFA" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+             <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Help_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+            <Image Source="setting" x:Name="ImgSettingsAccess" Grid.Row="0"  Grid.Column="4" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+               <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Settings_Clicked" />
+                         </Image.GestureRecognizers>
+                            </Image>
+            
+            <Label Text="Settings" Grid.Row="1" Grid.Column="4"  FontSize="12" x:Name="LblSettingsPage" TextColor="#F09CO2" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                         <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Settings_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    <Label Text="Settings" Grid.Row="1" Grid.Column="4"  FontSize="12" x:Name="LblSettingsPage1" TextColor="#228BFA" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Settings_Clicked" />
+                       </Label.GestureRecognizers>
+                   </Label>
+              </Grid>   
+            </Frame>
+      </StackLayout>
+    </Grid> 
+  </StackLayout>
+</ContentPage.Content>
+</ContentPage>

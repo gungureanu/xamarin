@@ -1,0 +1,10 @@
+﻿using System;
+namespace Spectrum.Model.ModelDataTypes
+{
+    public class MobileProjectListProfile
+    {
+        public MobileProjectListProfile()
+        {
+        }
+    }
+}

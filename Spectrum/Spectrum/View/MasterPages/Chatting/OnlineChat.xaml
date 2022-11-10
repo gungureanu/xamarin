@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:local="clr-namespace:Spectrum.CustomControls"
+    x:Class="Spectrum.View.MasterPages.Chatting.OnlineChat" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="White">
+
+            <StackLayout BackgroundColor="#3376CD" Margin="0,0,0,0" VerticalOptions="Start" HeightRequest="70" Padding="0,15,0,0">
+                <Grid BackgroundColor="#3376CD" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="55"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="15,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="home_grey.png" Margin="0,0,0,22" Grid.Row="0" Grid.Column="0" HeightRequest="30" WidthRequest="30"
+                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <!--<Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="NavIconTapped_Tapped"/>
+                            </Image.GestureRecognizers>-->
+                        </Image>
+                        <Label Text="Online Chat" Margin="0,0,0,22" Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" TextColor="#FFFFFF" HorizontalTextAlignment="Center"
+                       FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontSize="Title"></Label>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout x:Name="StkProjectList" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#4c97e4" Margin="10,0,0,15">
+                <StackLayout BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="3">
+                    <StackLayout HeightRequest="55" HorizontalOptions="FillAndExpand" VerticalOptions="Start" BackgroundColor="#EDEDED">
+                        <Label Text="Create New Channel:" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" Margin="10,0,0,0"
+                        FontAttributes="Bold" TextColor="#909090"
+                           >
+                            <Label.FontSize>
+                                <OnPlatform x:TypeArguments="x:Double" iOS="26" Android="24"/>
+                            </Label.FontSize>
+
+                        </Label>
+                    </StackLayout>
+                    <ScrollView VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,-5,0,0">
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="10,0,10,0">
+                            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="67" BackgroundColor="#FFFFFF">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="1"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Channel Name:" Grid.Row="0"  Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <local:CustomEntry TextColor="#3376CD" FontAttributes="Bold" x:Name="txtChannelName" Text="Sales and Marketing" Grid.Row="0"
+                                               Grid.Column="1" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></local:CustomEntry>
+                                <StackLayout HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Background="#E2E2E2" Grid.Row="1"
+                                         Grid.Column="0" Grid.ColumnSpan="2"></StackLayout>
+                            </Grid>
+                            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="67" BackgroundColor="#FFFFFF" Margin="0,-6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="1"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Channel Type:" Grid.Row="0" Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                    </Label.FontSize>
+                                </Label>
+
+                                <!--<local:CustomEntry TextColor="#3376CD" FontAttributes="Bold"  Text="Team Access" Grid.Row="0" Grid.Column="1"
+                                      FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></local:CustomEntry>-->
+
+                                <local:CustomPicker  Grid.Row="0" Grid.Column="1" FontSize="Medium" TextColor="#3376CD" FontAttributes="Bold" BackgroundColor="Transparent">
+                                    <Picker.Items>
+                                        <x:String>Team Access</x:String>
+                                    </Picker.Items>
+                                    <local:CustomPicker.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                    </local:CustomPicker.FontSize>
+                                </local:CustomPicker>
+                                <StackLayout HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Background="#E2E2E2" Grid.Row="1"
+                                         Grid.Column="0" Grid.ColumnSpan="2"></StackLayout>
+                            </Grid>
+                            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="67" BackgroundColor="#FFFFFF" Margin="0,-6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="1"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Private Channel:" Grid.Row="0" Grid.Column="0" FontSize="Medium"  VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+
+                                <!--<local:CustomEntry TextColor="#3376CD"  Text="Team Access" Grid.Row="0" Grid.Column="1"  FontAttributes="Bold" BackgroundColor="Transparent"
+                                               VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  FontSize="Medium"></local:CustomEntry>-->
+
+                                <local:CustomPicker Grid.Row="0" Grid.Column="1" TextColor="#3376CD"  FontAttributes="Bold" BackgroundColor="Transparent">
+
+                                    <Picker.Items>
+                                        <x:String>Yes</x:String>
+                                        <x:String>No</x:String>
+                                    </Picker.Items>
+                                    <local:CustomPicker.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                    </local:CustomPicker.FontSize>
+                                </local:CustomPicker>
+                                <StackLayout HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Background="#E2E2E2" Grid.Row="1"
+                                         Grid.Column="0" Grid.ColumnSpan="2"></StackLayout>
+                            </Grid>
+                            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="67" BackgroundColor="#FFFFFF" Margin="0,-6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="1"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Priority:" Grid.Row="0"  Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <!--<local:CustomEntry Grid.Row="0" Text="High" Grid.Column="1" TextColor="#3376CD" FontAttributes="Bold" FontSize="Medium" BackgroundColor="Transparent"></local:CustomEntry>-->
+
+                                <local:CustomPicker Grid.Row="0" Grid.Column="1" TextColor="#3376CD" FontAttributes="Bold"  BackgroundColor="Transparent">
+                                    <local:CustomPicker.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="17"/>
+                                    </local:CustomPicker.FontSize>
+                                    <Picker.Items>
+                                        <x:String>High</x:String>
+                                        <x:String>Low</x:String>
+                                    </Picker.Items>
+                                </local:CustomPicker>
+
+                                <StackLayout HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Background="#E2E2E2" Grid.Row="1"
+                                         Grid.Column="0" Grid.ColumnSpan="2"></StackLayout>
+                            </Grid>
+                            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="67" BackgroundColor="#FFFFFF" Margin="0,-6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="1"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Channel Manager:" Grid.Row="0" Grid.Column="0" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+                                <!--<local:CustomEntry Grid.Row="0" Text="Gabriel Ungureanu" Grid.Column="1" TextColor="#3376CD" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Transparent"></local:CustomEntry>-->
+
+                                <local:CustomPicker Grid.Row="0" Grid.Column="1" TextColor="#3376CD" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Transparent">
+                                    <Picker.Items>
+                                        <x:String>Gabriel Ungureanu</x:String>
+                                        <x:String>Sandeep Agarwal</x:String>
+                                    </Picker.Items>
+                                </local:CustomPicker>
+
+                                <StackLayout HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Background="#E2E2E2" Grid.Row="1"
+                                         Grid.Column="0" Grid.ColumnSpan="2"></StackLayout>
+                            </Grid>
+                            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="67" BackgroundColor="#FFFFFF" Margin="0,-6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="1"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Channel Owner:" Grid.Row="0" Grid.Column="0" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+
+                                <!--<local:CustomEntry Grid.Row="0" Text="Gabriel Ungureanu" Grid.Column="1" TextColor="#3376CD" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Transparent"></local:CustomEntry>-->
+
+                                <local:CustomPicker Grid.Row="0" Grid.Column="1" TextColor="#3376CD"  FontAttributes="Bold" BackgroundColor="Transparent">
+                                    <Picker.Items>
+                                        <x:String>Pending</x:String>
+                                        <x:String>In Progress</x:String>
+                                        <x:String>Completed</x:String>
+                                    </Picker.Items>
+                                    <local:CustomPicker.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                    </local:CustomPicker.FontSize>
+                                </local:CustomPicker>
+                                <StackLayout HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Background="#E2E2E2" Grid.Row="1"
+                                         Grid.Column="0" Grid.ColumnSpan="2"></StackLayout>
+                            </Grid>
+                            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="67" BackgroundColor="#FFFFFF" Margin="0,-6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="1"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Description:" Grid.Row="0" Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="17"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <local:CustomEntry TextColor="#3376CD" FontAttributes="Bold"  x:Name="txtChatDescription" Text="Specturm.com" Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                    <local:CustomEntry.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                    </local:CustomEntry.FontSize>
+                                </local:CustomEntry>
+                                <StackLayout HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Background="#E2E2E2" Grid.Row="1"
+                                   Grid.Column="0" Grid.ColumnSpan="2"></StackLayout>
+                            </Grid>
+                            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="67" BackgroundColor="#FFFFFF" Margin="0,-6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="1"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Submit Date:"  Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="17"/>
+                                    </Label.FontSize>
+                                </Label>
+
+                                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0"
+                                      Grid.Column="1">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="txtStartDate_Tapped"></TapGestureRecognizer>
+                                    </StackLayout.GestureRecognizers>
+                                    <Label x:Name="txtStartDate"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Text="MM/DD/YYYY" TextColor="#3376CD" FontAttributes="Bold" VerticalTextAlignment="Center">
+                                        <Label.FontSize>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <DatePicker TextColor="#3376CD" FontAttributes="Bold" x:Name="dtpStartDate" Format="MM/dd/yyyy" DateSelected="dtpStartDate_DateSelected" IsVisible="False"
+                                               FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></DatePicker>
+                                </StackLayout>
+                                <!--<DatePicker TextColor="#3376CD" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" x:Name="dtpStartDate" Format="MM/dd/yyyy" DateSelected="dtpStartDate_DateSelected" IsVisible="False"
+                                               FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+
+                                    <DatePicker.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="txtStartDate_Tapped"></TapGestureRecognizer>
+                                    </DatePicker.GestureRecognizers>
+                                </DatePicker>-->
+
+                                <!--<DatePicker Grid.Row="0" Grid.Column="1" TextColor="#3376CD" FontAttributes="Bold" x:Name="dtpStartDate" Format="MM/dd/yyyy" DateSelected="dtpStartDate_DateSelected" IsVisible="False"
+                                               FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></DatePicker>-->
+
+                                <StackLayout HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Background="#E2E2E2" Grid.Row="1"
+                                   Grid.Column="0" Grid.ColumnSpan="2"></StackLayout>
+                            </Grid>
+                            <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="67" BackgroundColor="#FFFFFF" Margin="0,-6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="1"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label Text="Start Date:"   Grid.Row="0" Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="17"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="txtEndDate_Tapped"></TapGestureRecognizer>
+                                    </StackLayout.GestureRecognizers>
+                                    <Label x:Name="txtEndDate" TextColor="#3376CD" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Text="MM/DD/YYYY" FontAttributes="Bold" VerticalTextAlignment="Center">
+                                        <Label.FontSize>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <DatePicker TextColor="#3376CD" FontAttributes="Bold" x:Name="dtpEndDate" Format="MM/dd/yyyy" IsVisible="False" DateSelected="dtpEndDate_DateSelected" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></DatePicker>
+                                </StackLayout>
+                                <!--<DatePicker TextColor="#3376CD" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" x:Name="dtpEndDate" Format="MM/dd/yyyy" IsVisible="False" DateSelected="dtpEndDate_DateSelected" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                    <DatePicker.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="txtEndDate_Tapped"></TapGestureRecognizer>
+                                    </DatePicker.GestureRecognizers>
+                                </DatePicker>-->
+
+                                <StackLayout HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Background="#E2E2E2" Grid.Row="1"
+                                         Grid.Column="0" Grid.ColumnSpan="2"></StackLayout>
+                            </Grid>
+                        </StackLayout>
+                    </ScrollView>
+                    <StackLayout HeightRequest="120" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#EDEDED">
+                        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5"></RowDefinition>
+                                <RowDefinition Height="55"></RowDefinition>
+                                <RowDefinition Height="55"></RowDefinition>
+                                <RowDefinition Height="5"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0" HeightRequest="5" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="#F2A600"></StackLayout>
+                            <StackLayout Grid.Row="1" Margin="0,5,0,0" HeightRequest="55" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                <Frame BorderColor="Transparent" HasShadow="False"  Background="#3376cd" HeightRequest="50" WidthRequest="200" VerticalOptions="Start" HorizontalOptions="Center" Padding="0" CornerRadius="5">
+
+                                    <Label Text="SAVE CHANNEL" TextColor="#FFFFFF" FontAttributes="Bold"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center">
+
+                                        <Label.FontSize>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="14"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Row="2" HeightRequest="55" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,-10,0,0">
+
+                                <Label Text="Cancel" TextColor="#909090"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                    </Label.FontSize>
+                                </Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="5" HeightRequest="5" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#F2A600"></StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+
+
+            <StackLayout Background="#F5F5F5" VerticalOptions="EndAndExpand" HeightRequest="78" IsVisible="False" Margin="0,0,0,5">
+                <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

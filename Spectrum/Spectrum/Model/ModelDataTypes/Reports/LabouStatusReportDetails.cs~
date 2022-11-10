@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+//using System.ComponentModel.DataAnnotations;
+
+namespace Spectrum.Model.ModelDataTypes.Reports
+{
+    public class LabouStatusReportDetails
+    {
+        public string UserName { get; set; }
+        public Guid UserID { get; set; }
+        public string ID { get; set; }
+        public string Type { get; set; }
+        public string Position { get; set; }
+        public Int32 NoOfAssignedTask { get; set; }
+        public Int32 NoOfCompletedTask { get; set; }
+        public string PercentageAllocation { get; set; }
+        public string CompanyPositionTitle { get; set; }
+        public decimal StdRate { get; set; }
+        public decimal OvtRate { get; set; }
+        public string HoursToDate { get; set; }
+        public decimal CostToDate { get; set; }
+        public decimal TotalTimeConsumed { get; set; }
+        public decimal TotalEstimateHours { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public string SupervisorName { get; set; }
+        public Guid SupervisorID { get; set; }
+        public string DepartmentName { get; set; }
+        public int DepartmentID { get; set; }
+        public string CompanyName { get; set; }
+        public Guid CompanyID { get; set; }
+        public string ChargeCode { get; set; }
+        public string TotalRecords { get; set; }
+    }
+}

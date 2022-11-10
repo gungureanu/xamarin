@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"  
+                    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Spectrum.Views.Popup.Alerts.PopupMessage">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation   
+                      PositionIn="Center"  
+                      PositionOut="Center" 
+                      ScaleIn="1.2"
+                      ScaleOut="0.8"
+                      DurationIn="500" 
+                      DurationOut="300"
+                      EasingIn="SinOut"
+                      EasingOut="SinIn"  
+      HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  BackgroundColor="Transparent">
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="280" BackgroundColor="Transparent">
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="Center" BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="65"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                    <RowDefinition Height="220"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="260"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent">
+                    <Image Source="kha_app_check.png"  Margin="0,3,0,0" HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand" Aspect="Fill"
+                 HeightRequest="60" WidthRequest="280"></Image>
+                </StackLayout >
+                <StackLayout Margin="0,-8,0,0" Grid.Row="1" HeightRequest="30" WidthRequest="280" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                </StackLayout>
+                <StackLayout Grid.Row="2" Grid.Column="0" HeightRequest="220" WidthRequest="280" BackgroundColor="Transparent">
+                    <Frame Padding="0" BorderColor="Transparent" HasShadow="False" Margin="-1,-15,-1,0" HeightRequest="150" WidthRequest="280" CornerRadius="8" BackgroundColor="White">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="35"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="lblMessageHeading" Grid.Row="0" Margin="0,12,0,0" Grid.Column="0" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center"
+                                   Text="" FontSize="16" FontAttributes="Bold" TextColor="#3376CD" ></Label>
+                            <Label x:Name="lblMessageText" Text="Clock Event Successfully Recorded"  
+                      Grid.Row="1" Grid.Column="0" Margin="0,0,0,0" TextColor="Black" FontSize="Medium" VerticalTextAlignment="Center"
+                     HorizontalTextAlignment="Center"  FontAttributes="Bold" ></Label>
+                            <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="0,15,0,0" HorizontalOptions="CenterAndExpand">
+                                <Label x:Name="LblActivity"  VerticalOptions="Center" HorizontalOptions="Center" Text="Clock Activity Mistake?"  FontSize="13" TextColor="Black" ></Label>
+                                <Label x:Name="LblActivityUndo"  VerticalOptions="Center" HorizontalOptions="Center" TextDecorations="Underline" Text="Undo"  FontSize="13" TextColor="Black" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="UndoActivity_Clicked"></TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</pages:PopupPage>

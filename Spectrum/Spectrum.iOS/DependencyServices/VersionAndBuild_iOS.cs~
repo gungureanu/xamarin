@@ -1,0 +1,14 @@
+﻿using System;
+using Foundation;
+using KhameliaApp.Dependencies;
+using KhameliaApp.iOS;
+using Xamarin.Forms
+namespace KhameliaApp.iOS.DependencyServices
+{
+    public class VersionAndBuild_iOS
+    {
+        public VersionAndBuild_iOS()
+        {
+        }
+    }
+}

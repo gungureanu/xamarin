@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Spectrum.CustomControls"
+             x:Class="Spectrum.Views.Login_OLD" NavigationPage.HasNavigationBar="False"  BackgroundColor="#FFF">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid x:Name="grdMain" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Margin="20" x:Name="imgLogo" WidthRequest="500" HeightRequest="150" 
+                       Source="Spectrum_kha_circle_logo.png" HorizontalOptions="CenterAndExpand" VerticalOptions="End"></Image>
+
+                <StackLayout Grid.Row="1" VerticalOptions="Start" Margin="20,0,20,0">
+                    <Frame OutlineColor="#4C97E4" HasShadow="false" Margin="0,2,0,0" BackgroundColor="#E2E2E2" HeightRequest="20" VerticalOptions="CenterAndExpand">
+                        <local:CustomEntry x:Name="txtEmailAddress" PlaceholderColor="Gray" Text="shariq.husain@logixshapers.biz"  Placeholder="Email Address" ></local:CustomEntry>
+                    </Frame>
+                    <Frame OutlineColor="#4C97E4" HasShadow="false" HeightRequest="20" BackgroundColor="#E2E2E2" VerticalOptions="CenterAndExpand">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80*"></ColumnDefinition>
+                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Row="0" Grid.Column="0">
+                                <local:CustomEntry x:Name="txtPassword" IsPassword="true" PlaceholderColor="Gray" Text="Khamel1a@07" Placeholder="Password"></local:CustomEntry>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="Gray" Padding="5" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Show_Clicked"/>
+                                </StackLayout.GestureRecognizers>
+                                <Label x:Name="lblshowHidePass" Text="SHOW" FontSize="Small" VerticalOptions="CenterAndExpand" TextColor="White"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                    <StackLayout Padding="13,0,0,0" Orientation="Horizontal">
+                        <Image Source="checked_icon.png" HeightRequest="20" x:Name="ImgUncheckedAccess">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ImgUncheckedAccess_Clicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label TextColor="#4C97E4" FontSize="Medium" Margin="0,2,0,0" Text="Remember Me">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ImgUncheckedAccess_Clicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+                <Frame x:Name="frmLogin" Grid.Row="2" Margin="20,0,20,0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" HasShadow="False" CornerRadius="7" Padding="2" BackgroundColor="#4C97E4">
+                    <Frame HasShadow="False" CornerRadius="5" BackgroundColor="#FFFFFF" Padding="12">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Login_Clicked"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+                            <Label Text="Sign In" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#4C97E4"></Label>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+                <ActivityIndicator Color="#4E9BEA" HeightRequest="120" WidthRequest="120" IsRunning="False" IsVisible="False" x:Name="ActiviltyLogin" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center"></ActivityIndicator>
+            </Grid>
+            <StackLayout  x:Name="stkBelow" Orientation="Vertical" VerticalOptions="CenterAndExpand" Margin="40">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Forgot Password?" TextColor="#A1a1a1" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ForgotPassword_Clicked"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="|" TextColor="#A1a1a1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" ></Label>
+                    <Label Text="Create Account" TextColor="#A1a1a1" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="2">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CreateAccount_Clicked"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 

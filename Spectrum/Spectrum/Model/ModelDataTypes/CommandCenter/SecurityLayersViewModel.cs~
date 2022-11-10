@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using BusinessLogic.IBusinessLogic;
+namespace Spectrum.Model.ModelDataTypes
+{
+    public class SecurityLayersViewModel
+    {
+        public List<ModuleProfile> ModuleProfileList { get; set; }
+        public List<GroupProfile> GroupProfileList { get; set; }
+        public List<RoleProfile> RoleProfileList { get; set; }
+        public List<UserProfile> UserProfilesList { get; set; }
+        public List<SubscriptionPlan> SubscriptionPlanList { get; set; }
+
+    }
+}

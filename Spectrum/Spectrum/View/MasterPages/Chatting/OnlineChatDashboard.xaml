@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:local="clr-namespace:Spectrum.CustomControls"
+    xmlns:converters="clr-namespace:Spectrum.Converter"
+    x:Class="Spectrum.View.MasterPages.Chatting.OnlineChatDashboard" NavigationPage.HasNavigationBar="False" >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <StackLayout BackgroundColor="#3376CD" Margin="0,0,0,0" VerticalOptions="Start" HeightRequest="125" Padding="0,0,0,0">
+
+                <Grid BackgroundColor="#3376CD" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,25,0,0">
+                    <!--<Grid.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,15,0,0" />
+                            <On Platform="android" Value="0,0,0,0" />
+                        </OnPlatform>
+                    </Grid.Margin>-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="55"></RowDefinition>
+                        <!--<RowDefinition Height="50"></RowDefinition>-->
+                    </Grid.RowDefinitions>
+                    <Grid BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="15,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="home_grey.png" Margin="0,5,0,0" Grid.Row="0" Grid.Column="0" HeightRequest="30" WidthRequest="30"
+                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        </Image>
+                        <Label Text="Online Chat" Margin="5,5,0,0" Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" TextColor="#FFFFFF" HorizontalTextAlignment="Center"
+                       FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontSize="Title"></Label>
+                    </Grid>
+                </Grid>
+
+                <!--<Grid BackgroundColor="#3376CD" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="15,0,0,10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Toggle_AllMessages.png" Margin="0,0,0,0" HeightRequest="235" WidthRequest="235" Grid.Row="0" Grid.Column="0" 
+                       HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                        </Image>
+                        <Image x:Name="ImgUnreadmessages" Source="Toggle_UnReadMessages.png" Margin="5,0,0,0" IsVisible="false"  Grid.Row="0" Grid.Column="0" 
+                       HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                        </Image>
+                    </Grid>
+                </Grid>-->
+            </StackLayout>
+
+            <StackLayout x:Name="StkProjectList" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <ListView x:Name="lstChats"
+                           FlowDirection="RightToLeft"
+            HasUnevenRows="True"
+            ItemsSource="{Binding Messages}"
+            SeparatorVisibility="None"
+            VerticalOptions="End">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout BackgroundColor="#FFFFFF">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Padding="12" Margin="0,0,0,0" BackgroundColor="White" VerticalOptions="FillAndExpand">
+                                        <Image Source="customer_icon.png" Margin="0,2,0,0" HeightRequest="48" WidthRequest="48"
+                       HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                                        </Image>
+                                        <Frame HasShadow="False" CornerRadius="5" Margin="55,-53,0,0" BackgroundColor="LightGray" Padding="0" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                                <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+                                                    <Label  Text="{Binding UserName}" TextColor="#3376CD" Margin="5,0,0,0" FontAttributes="Bold"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                                                        <Label.FontSize>
+                                                            <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Label Text="{Binding MessageTime}"  TextColor="#6e6e6e"  Margin="0,0,10,0" FontSize="Medium" VerticalOptions="EndAndExpand"  ></Label>
+                                                </StackLayout>
+                                                <Label TextColor="#6e6e6e" Margin="5,-5,0,0"   Text="{Binding MessageText}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                                    <Label.FontSize>
+                                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="FillAndExpand" Padding="12"  Margin="0,-8,0,0" BackgroundColor="White"  VerticalOptions="FillAndExpand">
+                                        <Image Source="customer_icon.png" Margin="0,5,0,0" HeightRequest="48" WidthRequest="48"
+                       HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                                        </Image>
+                                        <StackLayout  Margin="55,-55,0,0" BackgroundColor="White" Padding="0" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                                <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+                                                    <Label  Text="{Binding UserName}" TextColor="#3376CD" Margin="5,0,0,0" FontAttributes="Bold"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                                                        <Label.FontSize>
+                                                            <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="17"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Label Text="{Binding MessageTime}"  TextColor="#6e6e6e"  Margin="0,0,10,0" FontSize="Medium" VerticalOptions="EndAndExpand"  ></Label>
+                                                </StackLayout>
+                                                <Label TextColor="#6e6e6e" Margin="5,-5,0,0"   Text="{Binding MessageText}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                                    <Label.FontSize>
+                                                        <OnPlatform x:TypeArguments="x:Double" iOS="22" Android="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout HeightRequest="100" HorizontalOptions="FillAndExpand" Margin="0,0,0,0" VerticalOptions="EndAndExpand" BackgroundColor="#EDEDED">
+                <StackLayout Grid.Row="0" HeightRequest="5" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="#F2A600"></StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HeightRequest="60"
+                      Margin="10,10,0,0" >
+                    <Frame CornerRadius="10" HasShadow="False"  Margin="0,0,0,0"  BackgroundColor="LightGray" Padding="2">
+                        <ImageButton Source="customer_icon.png" Margin="0,0,0,0"  WidthRequest="55" HeightRequest="55" />
+                    </Frame>
+                    <local:CustomEditor x:Name="txtMessageText" TextChanged="txtMessageText_TextChanged" Margin="-11,0,0,0"  Placeholder="Type Here" VerticalOptions="FillAndExpand" HeightRequest="55" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray"/>
+                    <!--<Button Text="Post" BackgroundColor="LightGray" HeightRequest="35" WidthRequest="60" TextColor="#3376CD" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,0,0" />-->
+                    <Button Clicked="BtnSend_Clicked"  Text="POST" x:Name="BtnSend" WidthRequest="100" HeightRequest="60" VerticalOptions="End" HorizontalOptions="End" BackgroundColor="LightGray" Margin="5"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
